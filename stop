@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$1" == "production" ]
+then
+  sudo ~/.rbenv/shims/pumactl -F config/prod.rb stop
+else
+  pumactl -F config/dev.rb stop
+fi

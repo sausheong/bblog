@@ -1,0 +1,5 @@
+.row
+  .col-md-12
+    - @posts.each do |post|
+      =snippet :"post._snippet", locals: {post: post}
+    

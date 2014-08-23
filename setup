@@ -1,0 +1,8 @@
+psql -h localhost -c "create user bblog with password 'bblog'"
+psql -h localhost -c "drop database if exists bblog"
+psql -h localhost -c "create database bblog"
+psql -h localhost -c "grant all privileges on database bblog to bblog"
+
+sequel -m migrations postgres://bblog:bblog@localhost:5432/bblog
+
+ruby -r ./models.rb -e 'User.create(email:"admin@blog").set_password("123")'

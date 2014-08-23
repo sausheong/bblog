@@ -1,0 +1,14 @@
+.content
+  .row{style: "padding-bottom: 10px;"}
+    %h2.text-danger There is a problem with the application
+    
+    .text-info.lead
+      The error raised is:
+      
+    %pre
+      .lead #{@name.to_s}
+      #{@message.to_s}
+      
+  .row
+    %a.btn.btn-default{href: request.referrer} Go back
+      

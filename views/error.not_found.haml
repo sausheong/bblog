@@ -1,0 +1,11 @@
+.content
+  .row{style: "padding-bottom: 10px;"}
+    %h2.text-danger Can't find what you want
+    
+    .text-info.lead
+      We can't find what you are looking for.
+    %pre
+      #{env['sinatra.error'].nil? ? "" : env['sinatra.error'].message}
+  .row
+    %a.btn.btn-default{href: request.referrer} Go back
+      

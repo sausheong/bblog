@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" == "production" ]
+then
+  sudo SENDGRID_USERNAME=<sendgrid_username> SENDGRID_PASSWORD=<sendgrid_password> ~/.rbenv/shims/pumactl -F config/prod.rb start 
+else
+  SENDGRID_USERNAME=sausheong@gmail.com SENDGRID_PASSWORD=chang123 pumactl -F config/dev.rb start 
+  # SENDGRID_USERNAME=<sendgrid_username> SENDGRID_PASSWORD=<sendgrid_password> pumactl -F config/dev.rb start
+fi
