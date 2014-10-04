@@ -1,8 +1,13 @@
 .row
   .col-md-12
-    %a{href: "/posts/post/#{@post.uuid}/edit"}
-      %i.fa.fa-edit
-      Edit
+
+    %form{method: "post", action: "/post"}
+      %input{type: "hidden", name: "uuid", value: @post.uuid}
+      %input{type: "hidden", name: "_method", value: "delete"}
+      %a{href: "/posts/post/#{@post.uuid}/edit"}
+        Edit
+  
+      %input.btn.btn-link{type: "submit", value: "Delete"}
 
   .col-md-12
     =snippet :"post._snippet", locals: {post: @post}

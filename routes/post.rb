@@ -43,3 +43,8 @@ post "/post" do
   redirect "/"  
 end
 
+delete "/post" do
+  require_login
+  Post[uuid: params[:uuid]].destroy
+  redirect "/"
+end
