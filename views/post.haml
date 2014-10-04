@@ -1,0 +1,9 @@
+.row
+  .col-md-12
+    %a{href: "/posts/post/#{@post.uuid}/edit"}
+      %i.fa.fa-edit
+      Edit
+
+  .col-md-12
+    =snippet :"post._snippet", locals: {post: @post}
+    

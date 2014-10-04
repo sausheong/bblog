@@ -1,0 +1,16 @@
+.content
+  .row
+    %h2.text-info Write a post
+  .row
+    %form{method: :post, action: "/post"}
+      .form-group
+        %input.form-control{name: "title", value: @post.title}
+      .form-group  
+        %textarea.form-control{rows: 10, name: "content"}~@post.content
+      
+      %input{name: "uuid", type: "hidden", value: @post.uuid}
+      %hr
+      %button.btn.btn-primary{type: :submit} 
+        %i.fa.fa-save
+        Save
+      %a.btn.btn-default{href: "/"} Cancel
